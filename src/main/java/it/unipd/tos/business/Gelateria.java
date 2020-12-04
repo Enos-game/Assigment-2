@@ -8,13 +8,24 @@ import it.unipd.tos.business.exception.TakeAwayBillException;
 import it.unipd.tos.model.MenuItem;
 import it.unipd.tos.model.User;
 import it.unipd.tos.model.items;
+import java.util.Random;
 public class Gelateria implements TakeAwayBill{
+    public static int OrdiniRegalati = 0;
     @Override
     public double getOrderPrice(List<MenuItem> itemsOrder, User user) throws TakeAwayBillException{
         double Cibo = 0.0;
         double Bevande = 0.0;
         int nrGelati = 0;
         double GelatoEconomico = 100.0;
+        MenuItem first = itemsOrder.get(0);
+        Random random = new Random();
+        if(user.getAnnoDiNascita()>=2003 && OrdiniRegalati <= 10 && ((first.getData().getHours() == 18 || first.getData().getHours() == 19) && (first.getData().getMinutes() >= 0 || first.getData().getMinutes() <= 59)) ) {
+          int decisione = random.nextInt(100);
+          if(decisione < 50) {//50% di probabilità di avere minore con gelato gratuito, se esso è tra i primi 10
+              OrdiniRegalati++;
+              return 0;
+            }
+        }
         for(MenuItem menuItem : itemsOrder) {
             if(menuItem.getType() == items.Bevande) {
                 Bevande += menuItem.getPrice();
