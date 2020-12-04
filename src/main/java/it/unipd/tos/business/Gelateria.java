@@ -13,6 +13,7 @@ public class Gelateria implements TakeAwayBill{
     public double getOrderPrice(List<MenuItem> itemsOrder, User user) throws TakeAwayBillException{
         double Cibo = 0.0;
         double Bevande = 0.0;
+        int nrGelati = 0;
         for(MenuItem menuItem : itemsOrder) {
             if(menuItem.getType() == items.Bevande) {
                 Bevande += menuItem.getPrice();
