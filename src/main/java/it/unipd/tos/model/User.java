@@ -9,29 +9,9 @@ public class User {
     private String Nome;
     private String Cognome;
     private int annoDiNascita;
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getNome() {
-        return Nome;
-    }
-    public void setNome(String nome) {
-        Nome = nome;
-    }
-    public String getCognome() {
-        return Cognome;
-    }
-    public void setCognome(String cognome) {
-        Cognome = cognome;
-    }
+    
     public int getAnnoDiNascita() {
         return annoDiNascita;
-    }
-    public void setAnnoDiNascita(int annoDiNascita) {
-        this.annoDiNascita = annoDiNascita;
     }
     public User(String id, String nome, String cognome, int annoDiNascita) {
         this.id = id;
