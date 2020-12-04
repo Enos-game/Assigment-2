@@ -4,5 +4,5 @@
 package it.unipd.tos.model;
 
 public enum items {
-	Gelati,Budini,Bevande
+  Gelati, Budini, Bevande
 }
