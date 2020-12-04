@@ -16,10 +16,6 @@ public class MenuItem {
         price = p;
         data = new Date();
     }
- 
-    public String getName(){
-        return name;
-    }
     
     public items getType(){
         return itemType;
