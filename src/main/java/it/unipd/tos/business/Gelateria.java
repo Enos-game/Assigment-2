@@ -38,6 +38,11 @@ public class Gelateria implements TakeAwayBill{
         if(itemsOrder.size() > 30) {
             throw new TakeAwayBillException("troppi elementi nell'ordine effettuato");
         }
-        return Cibo + Bevande;
+        if(Bevande + Cibo < 10.0) {
+            return Bevande + Cibo + 0.5;
+        }
+        else {
+          return Cibo + Bevande;
+        }
     }
 }
