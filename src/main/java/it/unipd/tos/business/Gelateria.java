@@ -32,6 +32,9 @@ public class Gelateria implements TakeAwayBill{
         if(nrGelati > 5) {
             Cibo -= (GelatoEconomico/2);
         }
+        if(Cibo > 50.0) {
+            Cibo -= (Cibo*0.1);
+        }
         return Cibo + Bevande;
     }
 }
